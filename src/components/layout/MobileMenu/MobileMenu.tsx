@@ -51,7 +51,7 @@ const MobileMenu: FC<MobileMenuProps> = ({isOpen, onClose}) => {
             {isOpen && <div className="mobileMenuBackdrop" onClick={onClose}/>}
 
             <aside
-                   className={`mobileMenu ${isOpen ? "open" : ""}`}>
+                className={`mobileMenu ${isOpen ? "open" : ""}`}>
                 <div className="mobileMenuHeader">
                     <h2 className="mobileMenu__logo">LOGOTYPE</h2>
                     <img src={Close} alt={'close'} onClick={onClose} className={'closeMenu'}/>

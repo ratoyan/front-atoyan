@@ -33,9 +33,7 @@ const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
 
             <div className="topBar container">
                 <div>
-                    <button className={'menuToggle'} onClick={() => setIsMobileMenu(true)}>
-                        <img src={Menu} alt="menu"/>
-                    </button>
+                    <img src={Menu} alt="menu" className={'menuToggle'} onClick={() => setIsMobileMenu(true)}/>
                 </div>
 
 
@@ -48,7 +46,7 @@ const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
 
             <nav className="nav">
                 <ul className="menu">
-                    {menuItems.map(({label, submenu}: MenuItem,index: number) => (
+                    {menuItems.map(({label, submenu}: MenuItem, index: number) => (
                         <li className="menuItem" key={index}>
                             {label}
                             <img src={Down} alt="down"/>
