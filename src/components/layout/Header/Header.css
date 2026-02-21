@@ -11,7 +11,7 @@
 
         .menuToggle {
             display: none;
-            cursor: pointer;
+            cursor: var(--cursor-pointer), pointer;
         }
 
         @media screen and (max-width: 75.375rem) {
@@ -47,7 +47,7 @@
                 color: var(--black);
                 padding-top: 1.3125rem;
                 padding-bottom: 1.25rem;
-                cursor: pointer;
+                cursor: var(--cursor-pointer), pointer;
 
                 display: flex;
                 justify-content: center;

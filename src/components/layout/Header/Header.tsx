@@ -13,9 +13,9 @@ import "../../../style/global.css";
 // components
 import MobileMenu from "../MobileMenu/MobileMenu.tsx";
 import Submenu from "../../ui/Submenu/Submenu.tsx";
+import SearchToggle from "../../ui/SearchToggle/SearchToggle.tsx";
 
 // images
-import Search from "../../../assets/images/search.svg";
 import Down from "../../../assets/images/chevron-down.svg";
 import Menu from "../../../assets/images/menu.svg";
 
@@ -37,7 +37,8 @@ const Header: FC = () => {
                 <h1 className="logoText">LOGOTYPE</h1>
 
                 <div className="right">
-                    <img src={Search} alt="search"/>
+                    <SearchToggle value={''} setValue={(val: string) => {
+                    }}/>
                 </div>
             </div>
 

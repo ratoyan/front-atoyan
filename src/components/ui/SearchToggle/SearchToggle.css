@@ -1,0 +1,36 @@
+.searchWrapper {
+    position: relative;
+    display: inline-block;
+
+    .searchIcon {
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+    }
+
+    .searchInput {
+        position: absolute;
+        top: -0.5rem;
+        right: 0;
+        width: 13.75rem;
+        padding: 0.5rem 0.75rem;
+        border: 0.0625rem solid var(--gray-120);
+        border-radius: 0.375rem;
+        background: var(--white);
+        box-shadow: 0 0.375rem 1rem rgba(0, 0, 0, 0.12);
+
+        opacity: 0;
+        transform: translateX(1.5rem);
+        pointer-events: none;
+
+        transition:
+                opacity 0.25s ease,
+                transform 0.25s ease;
+    }
+
+    .searchInput.open {
+        opacity: 1;
+        transform: translateX(0.625rem);
+        pointer-events: auto;
+    }
+}

@@ -4,7 +4,10 @@
     --white-50: 255, 255, 255;
     --black: #000000;
     --gray-100: #E9E9E9;
+    --gray-120: #ddd;
     --gray-150: #969696;
+
+    --cursor-pointer: url('../assets/images/cursorPointer.svg');
 }
 
 .container {

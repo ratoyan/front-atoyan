@@ -32,7 +32,7 @@
     align-items: center;
 
     .closeMenu {
-        cursor: pointer;
+        cursor: var(--cursor-pointer), pointer;
     }
 }
 
@@ -46,7 +46,7 @@
         padding-top: 1rem;
         padding-bottom: 1.1875rem;
         border-bottom: 0.0625rem solid var(--gray-100);
-        cursor: pointer;
+        cursor: var(--cursor-pointer), pointer;
         display: flex;
         justify-content: flex-start;
         align-items: center;
