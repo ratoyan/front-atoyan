@@ -1,13 +1,14 @@
-import './App.css'
-import Header from "./components/layout/Header/Header.tsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home.tsx";
 
-function App() {
-
+const App = () => {
     return (
-        <div style={{width: '99%'}}>
-            <Header/>
-        </div>
-    )
-}
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+        </BrowserRouter>
+    );
+};
 
-export default App
+export default App;

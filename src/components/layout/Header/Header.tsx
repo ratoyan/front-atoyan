@@ -19,7 +19,12 @@ import SearchToggle from "../../ui/SearchToggle/SearchToggle.tsx";
 import Down from "../../../assets/images/chevron-down.svg";
 import Menu from "../../../assets/images/menu.svg";
 
-const Header: FC = () => {
+interface HeaderProps {
+    search: string;
+    setSearch: (val: string) => void;
+}
+
+const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
     const [isMobileMenu, setIsMobileMenu] = useState<boolean>(false);
 
     return (
@@ -37,16 +42,15 @@ const Header: FC = () => {
                 <h1 className="logoText">LOGOTYPE</h1>
 
                 <div className="right">
-                    <SearchToggle value={''} setValue={(val: string) => {
-                    }}/>
+                    <SearchToggle value={search} setValue={setSearch}/>
                 </div>
             </div>
 
             {/* NAVIGATION */}
             <nav className="nav">
                 <ul className="menu">
-                    {menuItems.map(({label, submenu}: MenuItem) => (
-                        <li className="menuItem" key={label}>
+                    {menuItems.map(({label, submenu}: MenuItem,index: number) => (
+                        <li className="menuItem" key={index}>
                             {label}
                             <img src={Down} alt="down"/>
 

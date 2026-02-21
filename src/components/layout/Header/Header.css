@@ -26,6 +26,10 @@
         }
     }
 
+    .right {
+        min-width: 1.4375rem;
+    }
+
     .nav {
         width: 100%;
         border-top: 0.0625rem solid var(--gray-100);

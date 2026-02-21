@@ -12,8 +12,8 @@ interface SubmenuProps {
 const Submenu: FC<SubmenuProps> = ({data, className}: SubmenuProps) => {
     return (
         <ul className={`submenu ${className ?? ""}`}>
-            {data.map((item) => (
-                <li className="submenuItem" key={item}>
+            {data.map((item: string,index: number) => (
+                <li className="submenuItem" key={index}>
                     {item}
                     <img src={Right} alt="right"/>
                 </li>
