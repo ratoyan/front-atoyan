@@ -1,51 +1,64 @@
-import {type FC, useEffect, useState} from "react";
+import {type FC, useEffect, useMemo, useState} from "react";
+
+// images
+import EmptySearch from '../../assets/images/emptySearch.svg';
 
 // types
-import type {Post} from "../../types/post.ts";
+import type {Post} from "../../types/post";
 
 // api
-import {postsApi} from "../../services/api/posts.api.ts";
+import {postsApi} from "../../services/api/posts.api";
 
 // components
-import Header from "../../components/layout/Header/Header.tsx";
-import PostItem from "../../components/ui/PostItem/PostItem.tsx";
+import Header from "../../components/layout/Header/Header";
+import PostItem from "../../components/ui/PostItem/PostItem";
 
 // styles
-import './Home.css';
+import "./Home.css";
+import "../../style/global.css";
 
 const Home: FC = () => {
-    const [search, setSearch] = useState<string>('');
-    const [posts, setPosts] = useState<Post[]>([]);
+    const [search, setSearch] = useState("");
+    const [allPosts, setAllPosts] = useState<Post[]>([]);
 
     useEffect(() => {
         const fetchPosts = async () => {
             try {
                 const resp = await postsApi();
                 if (resp.data?.length) {
-                    setPosts(resp.data);
+                    setAllPosts(resp.data);
                 }
-            } catch (e) {
-                console.error(e);
+            } catch (error) {
+                console.error("Failed to fetch posts", error);
             }
         };
 
         fetchPosts();
     }, []);
 
+    const filteredPosts = useMemo(() => {
+        if (!search.trim()) return allPosts;
+
+        return allPosts.filter((post) =>
+            post.title.toLowerCase().includes(search.toLowerCase())
+        );
+    }, [search, allPosts]);
+
     return (
-        <div style={{width: '99%'}}>
+        <div className='page'>
             <Header search={search} setSearch={setSearch}/>
-            <div className={'posts container'}>
-                {
-                    posts?.length > 0 && posts.map((post: Post, index: number) => {
-                        return (
-                            <PostItem post={post} key={index}/>
-                        )
-                    })
-                }
+
+            <div className="posts container">
+                {filteredPosts.length > 0 ? (
+                    filteredPosts.map((post: Post, index: number) => (
+                        <PostItem post={post} key={index}/>
+                    ))
+                ) : (
+                    <img src={EmptySearch} alt={'empty'} className={'emptyImage'}/>
+                )}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Home;

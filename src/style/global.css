@@ -21,3 +21,7 @@
     margin: 0 auto;
     max-width: 72.5rem;
 }
+
+.page {
+    width: 100%;
+}

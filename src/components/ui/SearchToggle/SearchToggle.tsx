@@ -1,4 +1,4 @@
-import {type FC, useRef, useEffect, useState} from "react";
+import { type FC, useRef, useEffect, useState } from "react";
 
 // images
 import SearchIcon from "../../../assets/images/search.svg";
@@ -11,7 +11,7 @@ interface SearchProps {
     setValue: (val: string) => void;
 }
 
-const SearchToggle: FC<SearchProps> = ({value, setValue}: SearchProps) => {
+const SearchToggle: FC<SearchProps> = ({ value, setValue }) => {
     const [isOpen, setIsOpen] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -30,15 +30,19 @@ const SearchToggle: FC<SearchProps> = ({value, setValue}: SearchProps) => {
                 onClick={() => setIsOpen(true)}
             />
 
-                <input
-                    ref={inputRef}
-                    type="text"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    onBlur={() => setIsOpen(false)}
-                    placeholder="Search..."
-                    className={`searchInput ${isOpen ? "open" : ""}`}
-                />
+            <input
+                ref={inputRef}
+                type="text"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                onBlur={() => {
+                    if(value.length === 0) {
+                        setIsOpen(false)
+                    }
+                }}
+                placeholder="Search..."
+                className={`searchInput ${isOpen ? "open" : ""}`}
+            />
         </div>
     );
 };

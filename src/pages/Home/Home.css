@@ -5,9 +5,22 @@
     align-items: flex-start;
     gap: 2.5rem;
     margin-top: 3rem;
+    padding-bottom: 3rem;
 
     @media screen and (max-width: 36.375rem) {
         margin-top: 0;
         padding: 1.25rem;
+    }
+
+    .emptyImage {
+        width: 12.5rem;
+        height: 12.5rem;
+        margin-top: 12.5rem;
+
+        @media screen and (max-width: 36.375rem) {
+            width: 9.375rem;
+            height: 9.375rem;
+            margin-top: 6.25rem;
+        }
     }
 }
