@@ -11,8 +11,11 @@
     --gray-150: #969696;
     --gray-200: #929292;
     --gray-250: #9B9B9B;
+    --gray-300: #6b7280;
 
-    --red: #EB0028;
+    --red-50: #fee2e2;
+    --red-100: #EB0028;
+    --red-150: #b91c1c;
 
     --cursor-pointer: url('../assets/images/cursorPointer.svg');
 }

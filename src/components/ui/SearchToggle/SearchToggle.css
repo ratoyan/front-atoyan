@@ -3,9 +3,14 @@
     display: inline-block;
 
     .searchIcon {
-        cursor: pointer;
+        cursor: var(--cursor-pointer), pointer;
         position: relative;
         z-index: 10;
+    }
+
+    .closeIcon {
+        width: 0.80rem;
+        height: 0.80rem;
     }
 
     .searchInput {

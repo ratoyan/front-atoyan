@@ -11,6 +11,10 @@
     border-right: 0.0625rem solid var(--gray-100);
     will-change: transform;
     touch-action: pan-y;
+
+    @media screen and (max-width: 21.875rem) {
+        width: 17rem;
+    }
 }
 
 .mobileMenu.open {
