@@ -1,0 +1,13 @@
+
+:root {
+    --white: #ffffff;
+    --white-50: 255, 255, 255;
+    --black: #000000;
+    --gray-100: #E9E9E9;
+    --gray-150: #969696;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 72.5rem;
+}

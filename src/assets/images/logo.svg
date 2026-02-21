@@ -1,0 +1,37 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 140"
+        width="181"
+        height="21"
+        preserveAspectRatio="xMidYMid meet"
+>
+    <!-- FRONT TEXT -->
+    <text
+            x="10"
+            y="100"
+            font-family="Arial Black, Impact, sans-serif"
+            font-size="96"
+            font-weight="900"
+            letter-spacing="10"
+            fill="#ffffff"
+            stroke="#000000"
+            stroke-width="4"
+    >
+        LOGOTYPE
+    </text>
+
+    <!-- DEPTH / SHADOW -->
+    <text
+            x="18"
+            y="108"
+            font-family="Arial Black, Impact, sans-serif"
+            font-size="96"
+            font-weight="900"
+            letter-spacing="10"
+            fill="none"
+            stroke="#000000"
+            stroke-width="4"
+    >
+        LOGOTYPE
+    </text>
+</svg>

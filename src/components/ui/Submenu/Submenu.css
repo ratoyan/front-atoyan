@@ -1,0 +1,36 @@
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: var(--white);
+    min-width: 11rem;;
+    z-index: 10;
+    padding: 1.25rem;
+    border: 0.0625rem solid var(--gray-100);
+
+    .submenuItem {
+        list-style: none;
+        font-weight: 400;
+        font-size: 0.8125rem;
+        color: var(--black);
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        border-bottom: 0.0625rem solid var(--gray-100);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: padding-left 0.3s ease;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            padding-left: 0.5rem;
+            color: var(--gray-150);
+        }
+    }
+}

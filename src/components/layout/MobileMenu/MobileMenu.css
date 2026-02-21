@@ -1,0 +1,72 @@
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 100vh;
+    background: var(--white);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+    border-right: 0.0625rem solid var(--gray-100);
+    will-change: transform;
+    touch-action: pan-y;
+}
+
+.mobileMenu.open {
+    transform: translateX(0);
+}
+
+.mobileMenuBackdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.mobileMenuHeader {
+    padding: 2rem 1.25rem 1.5625rem;
+    border-bottom: 0.0625rem solid var(--gray-100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .closeMenu {
+        cursor: pointer;
+    }
+}
+
+.mobileMenuList {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1.0625rem;
+
+    .mobileMenuItem {
+        list-style: none;
+        padding-top: 1rem;
+        padding-bottom: 1.1875rem;
+        border-bottom: 0.0625rem solid var(--gray-100);
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 0.25rem;
+        position: relative;
+
+        .mobileMenuItemLabel {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--black);
+        }
+
+        .mobileSubmenuItem {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
