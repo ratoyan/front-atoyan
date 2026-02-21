@@ -1,6 +1,9 @@
 .header {
     width: 100%;
     background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 900;
 
     .topBar {
         width: 100%;
@@ -20,6 +23,8 @@
         }
 
         @media screen and (max-width: 36.375rem) {
+            height: 4.625rem;;
+
             .menuToggle {
                 display: flex;
             }
@@ -74,4 +79,6 @@
         }
     }
 }
+
+
 
