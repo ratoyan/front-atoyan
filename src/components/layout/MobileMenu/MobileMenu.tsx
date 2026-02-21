@@ -48,19 +48,15 @@ const MobileMenu: FC<MobileMenuProps> = ({isOpen, onClose}) => {
 
     return (
         <>
-            {/* BACKDROP */}
             {isOpen && <div className="mobileMenuBackdrop" onClick={onClose}/>}
 
-            {/* MENU */}
             <aside
                    className={`mobileMenu ${isOpen ? "open" : ""}`}>
-                {/* HEADER */}
                 <div className="mobileMenuHeader">
                     <h2 className="mobileMenu__logo">LOGOTYPE</h2>
                     <img src={Close} alt={'close'} onClick={onClose} className={'closeMenu'}/>
                 </div>
 
-                {/* LIST */}
                 <div ref={menuRef}>
                     <ul className="mobileMenuList">
                         {menuItems.map(({label, submenu}: MenuItem, index: number) => (

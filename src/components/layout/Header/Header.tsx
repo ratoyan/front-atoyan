@@ -30,7 +30,7 @@ const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
     return (
         <header className="header">
             <MobileMenu isOpen={isMobileMenu} onClose={() => setIsMobileMenu(false)}/>
-            {/* TOP BAR */}
+
             <div className="topBar container">
                 <div>
                     <button className={'menuToggle'} onClick={() => setIsMobileMenu(true)}>
@@ -46,7 +46,6 @@ const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
                 </div>
             </div>
 
-            {/* NAVIGATION */}
             <nav className="nav">
                 <ul className="menu">
                     {menuItems.map(({label, submenu}: MenuItem,index: number) => (
