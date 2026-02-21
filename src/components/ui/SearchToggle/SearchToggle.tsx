@@ -1,3 +1,4 @@
+import * as React from "react";
 import { type FC, useRef, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -54,7 +55,7 @@ const SearchToggle: FC<SearchProps> = ({ value, setValue }) => {
                 ref={inputRef}
                 type="text"
                 value={value}
-                onChange={(e) => setValue(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
                 onBlur={() => {
                     if (!value.trim()) {
                         setIsOpen(false);
