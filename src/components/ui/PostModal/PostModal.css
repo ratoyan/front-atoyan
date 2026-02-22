@@ -8,7 +8,7 @@
     align-items: center;
 
     .postModal {
-        width: 100%;
+        width: 95%;
         background: var(--white);
         border-radius: 1rem;
         padding: 1rem;
