@@ -18,7 +18,7 @@ import "./Home.css";
 import "../../style/global.css";
 
 const Home: FC = () => {
-    const [search, setSearch] = useState("");
+    const [search, setSearch] = useState<string>("");
     const [allPosts, setAllPosts] = useState<Post[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);

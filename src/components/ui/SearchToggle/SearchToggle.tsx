@@ -16,7 +16,7 @@ interface SearchProps {
 
 const SearchToggle: FC<SearchProps> = ({ value, setValue }) => {
     const inputRef = useRef<HTMLInputElement>(null);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
