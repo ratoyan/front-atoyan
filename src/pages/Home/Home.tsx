@@ -12,20 +12,19 @@ import {postsApi} from "../../services/api/posts.api";
 // components
 import Header from "../../components/layout/Header/Header";
 import PostItem from "../../components/ui/PostItem/PostItem";
+import PostModal from "../../components/ui/PostModal/PostModal.tsx";
 
 // styles
 import "./Home.css";
 import "../../style/global.css";
-import PostModal from "../../components/ui/PostModal/PostModal.tsx";
 
 const Home: FC = () => {
-    const [search, setSearch] = useState("");
-    const [allPosts, setAllPosts] = useState<Post[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [search, setSearch] = useState<string>("");
     const [error, setError] = useState<string | null>(null);
-
+    const [allPosts, setAllPosts] = useState<Post[]>([]);
     const [selectedPost, setSelectedPost] = useState<Post | null>(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchPosts = async () => {
