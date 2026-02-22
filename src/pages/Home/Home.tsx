@@ -16,12 +16,16 @@ import PostItem from "../../components/ui/PostItem/PostItem";
 // styles
 import "./Home.css";
 import "../../style/global.css";
+import PostModal from "../../components/ui/PostModal/PostModal.tsx";
 
 const Home: FC = () => {
-    const [search, setSearch] = useState<string>("");
+    const [search, setSearch] = useState("");
     const [allPosts, setAllPosts] = useState<Post[]>([]);
-    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    const [selectedPost, setSelectedPost] = useState<Post | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -29,7 +33,7 @@ const Home: FC = () => {
                 setIsLoading(true);
                 setError(null);
 
-                const posts = await postsApi();
+                const posts: Post[] = await postsApi();
                 setAllPosts(posts ?? []);
             } catch (err: unknown) {
                 if (err instanceof Error) {
@@ -65,8 +69,13 @@ const Home: FC = () => {
                 ) : error ? (
                     <p className="error">{error}</p>
                 ) : filteredPosts.length > 0 ? (
-                    filteredPosts.map((post: Post, index) => (
-                        <PostItem post={post} key={index}/>
+                    filteredPosts.map((post: Post, index: number) => (
+                        <PostItem post={post} key={index}
+                                  onClick={(): void => {
+                                      setSelectedPost(post);
+                                      setIsModalOpen(true);
+                                  }}
+                        />
                     ))
                 ) : (
                     <img
@@ -76,6 +85,15 @@ const Home: FC = () => {
                     />
                 )}
             </main>
+
+            <PostModal
+                isOpen={isModalOpen}
+                post={selectedPost}
+                onClose={() => {
+                    setIsModalOpen(false);
+                    setSelectedPost(null);
+                }}
+            />
         </div>
     );
 };

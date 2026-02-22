@@ -8,11 +8,12 @@ import "./PostItem.css";
 
 interface PostItemProps {
     post: Post;
+    onClick: () => void;
 }
 
-const PostItem: FC<PostItemProps> = ({post}) => {
+const PostItem: FC<PostItemProps> = ({post, onClick}: PostItemProps) => {
     return (
-        <article className="postItem">
+        <article className="postItem" onClick={onClick}>
             <img
                 src={post.img_2x}
                 alt={post.title}
