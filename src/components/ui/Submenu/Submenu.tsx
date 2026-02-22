@@ -1,4 +1,6 @@
 import type {FC} from "react";
+
+// images
 import Right from "../../../assets/images/chevron-right.svg";
 
 // styles
