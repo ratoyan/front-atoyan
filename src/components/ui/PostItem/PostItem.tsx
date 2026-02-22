@@ -1,4 +1,4 @@
-import {type FC, useState} from "react";
+import {type FC} from "react";
 
 // types
 import type {Post} from "../../../types/post";
@@ -11,20 +11,21 @@ interface PostItemProps {
 }
 
 const PostItem: FC<PostItemProps> = ({post}) => {
-    const [loaded, setLoaded] = useState<boolean>(false);
-    const [error, setError] = useState<boolean>(false);
-
     return (
         <article className="postItem">
-            {!loaded && !error && <div className="imageSkeleton" />}
-
             <img
-                src={post.img}
+                src={post.img_2x}
                 alt={post.title}
                 className="postItemImage"
-                loading="lazy"
-                onLoad={() => setLoaded(true)}
-                onError={() => setError(true)}
+                fetchPriority={'high'}
+                srcSet={`
+                    ${post.img} 768w,
+                    ${post.img_2x} 1600w
+                `}
+                decoding="async"
+                width={360}
+                height={231}
+                sizes="360px"
             />
 
             <span className="postItemTag">{post.tags}</span>
