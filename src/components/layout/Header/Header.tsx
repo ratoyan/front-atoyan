@@ -57,7 +57,6 @@ const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
                         </li>
                     ))}
 
-                    {/* BUY NOW */}
                     <li className="menuItem">Buy Now</li>
                 </ul>
             </nav>
