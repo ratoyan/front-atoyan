@@ -34,7 +34,7 @@ const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
 
             <div className="topBar container">
                 <div>
-                    <img src={Menu} alt="menu" className={'menuToggle'} onClick={() => setIsMobileMenu(true)}/>
+                    <img src={Menu} alt="menu" className="menuToggle" onClick={() => setIsMobileMenu(true)}/>
                 </div>
 
                 <img src={Logo} alt={'logo'} className="menuLogo"/>
@@ -58,7 +58,7 @@ const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
                     ))}
 
                     {/* BUY NOW */}
-                    <li className="menuItem buyNow">Buy Now</li>
+                    <li className="menuItem">Buy Now</li>
                 </ul>
             </nav>
         </header>
