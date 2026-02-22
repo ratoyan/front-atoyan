@@ -79,7 +79,7 @@
             }
         }
 
-        @media screen and (max-width: 36.375rem) {
+        @media screen and (max-width: 64rem) {
             display: none;
         }
     }
