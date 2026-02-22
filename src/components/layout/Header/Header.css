@@ -20,6 +20,11 @@
         @media screen and (max-width: 75.375rem) {
             padding-right: 1.25rem;
             padding-left: 1.25rem;
+
+            .menuLogo {
+                width: 10.2rem;
+                height: 1.5rem;
+            }
         }
 
         @media screen and (max-width: 36.375rem) {

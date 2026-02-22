@@ -37,7 +37,7 @@ const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
                     <img src={Menu} alt="menu" className={'menuToggle'} onClick={() => setIsMobileMenu(true)}/>
                 </div>
 
-                <img src={Logo} alt={'logo'}/>
+                <img src={Logo} alt={'logo'} className="menuLogo"/>
 
                 <div className="right">
                     <SearchToggle value={search} setValue={setSearch}/>

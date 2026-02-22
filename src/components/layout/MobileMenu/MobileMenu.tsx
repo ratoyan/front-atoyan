@@ -15,6 +15,7 @@ import Submenu from "../../ui/Submenu/Submenu.tsx";
 // images
 import Close from '../../../assets/images/close.svg'
 import Down from '../../../assets/images/chevron-down.svg'
+import Logo from "../../../assets/images/logo.svg";
 
 interface MobileMenuProps {
     isOpen: boolean;
@@ -53,8 +54,8 @@ const MobileMenu: FC<MobileMenuProps> = ({isOpen, onClose}) => {
             <aside
                 className={`mobileMenu ${isOpen ? "open" : ""}`}>
                 <div className="mobileMenuHeader">
-                    <h2 className="mobileMenu__logo">LOGOTYPE</h2>
-                    <img src={Close} alt={'close'} onClick={onClose} className={'closeMenu'}/>
+                    <img src={Logo} alt={'logo'} className="mobileMenuHeaderLogo"/>
+                    <img src={Close} alt={'close'} onClick={onClose} className="closeMenu"/>
                 </div>
 
                 <div ref={menuRef}>

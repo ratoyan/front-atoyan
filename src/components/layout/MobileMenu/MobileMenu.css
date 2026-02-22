@@ -26,6 +26,11 @@
         .closeMenu {
             cursor: var(--cursor-pointer), pointer;
         }
+
+        .mobileMenuHeaderLogo {
+            width: 10.08rem;
+            height: 1.5rem;
+        }
     }
 
     .mobileMenuList {
