@@ -22,11 +22,11 @@ interface MobileMenuProps {
     onClose: () => void;
 }
 
-const MobileMenu: FC<MobileMenuProps> = ({isOpen, onClose}) => {
+const MobileMenu: FC<MobileMenuProps> = ({isOpen, onClose}: MobileMenuProps) => {
     const menuRef = useRef<HTMLDivElement | null>(null);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-    const handleToggle = (index: number) => {
+    const handleToggle = (index: number): void => {
         setActiveIndex(prev => (prev === index ? null : index));
     };
 
