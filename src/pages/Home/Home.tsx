@@ -29,11 +29,14 @@ const Home: FC = () => {
                 setIsLoading(true);
                 setError(null);
 
-                const resp = await postsApi();
-                setAllPosts(resp.data ?? []);
-            } catch (err) {
-                console.error("Failed to fetch posts", err);
-                setError("Failed to load posts");
+                const posts = await postsApi();
+                setAllPosts(posts ?? []);
+            } catch (err: unknown) {
+                if (err instanceof Error) {
+                    setError(`Failed to load posts: ${err.message}`);
+                } else {
+                    setError("Failed to load posts");
+                }
                 setAllPosts([]);
             } finally {
                 setIsLoading(false);
