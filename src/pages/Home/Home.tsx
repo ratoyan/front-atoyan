@@ -59,7 +59,7 @@ const Home: FC = () => {
         <div className="page">
             <Header search={search} setSearch={setSearch}/>
 
-            <div className="posts container">
+            <main className="posts container">
                 {isLoading ? (
                     <p className="loading">Loading posts...</p>
                 ) : error ? (
@@ -75,7 +75,7 @@ const Home: FC = () => {
                         className="emptyImage"
                     />
                 )}
-            </div>
+            </main>
         </div>
     );
 };
