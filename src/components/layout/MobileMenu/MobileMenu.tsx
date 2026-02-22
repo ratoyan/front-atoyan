@@ -62,10 +62,10 @@ const MobileMenu: FC<MobileMenuProps> = ({isOpen, onClose}) => {
                     <ul className="mobileMenuList">
                         {menuItems.map(({label, submenu}: MenuItem, index: number) => (
                             <li key={label} className="mobileMenuItem" onClick={() => handleToggle(index)}>
-                                <span className={'mobileMenuItemLabel'}>{label}</span>
+                                <span className="mobileMenuItemLabel">{label}</span>
                                 <img src={Down} alt={'down'}/>
                                 {submenu && (activeIndex == index) && (
-                                    <Submenu data={submenu} className={'mobileSubmenuItem'}/>
+                                    <Submenu data={submenu} className="mobileSubmenuItem"/>
                                 )}
                             </li>
                         ))}
