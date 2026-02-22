@@ -42,7 +42,7 @@ const SearchToggle: FC<SearchProps> = ({ value, setValue }) => {
         }
     }, [value, setSearchParams]);
 
-    const handleIconClick = () => {
+    const handleIconClick = (): void => {
         if (value.trim()) {
             setValue("");
             setIsOpen(false);
