@@ -18,6 +18,7 @@ import SearchToggle from "../../ui/SearchToggle/SearchToggle.tsx";
 // images
 import Down from "../../../assets/images/chevron-down.svg";
 import Menu from "../../../assets/images/menu.svg";
+import Logo from "../../../assets/images/logo.svg";
 
 interface HeaderProps {
     search: string;
@@ -36,8 +37,7 @@ const Header: FC<HeaderProps> = ({search, setSearch}: HeaderProps) => {
                     <img src={Menu} alt="menu" className={'menuToggle'} onClick={() => setIsMobileMenu(true)}/>
                 </div>
 
-
-                <h1 className="logoText">LOGOTYPE</h1>
+                <img src={Logo} alt={'logo'}/>
 
                 <div className="right">
                     <SearchToggle value={search} setValue={setSearch}/>
